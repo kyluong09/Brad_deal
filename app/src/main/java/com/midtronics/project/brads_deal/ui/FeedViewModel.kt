@@ -9,6 +9,7 @@ import com.midtronics.project.brads_deal.data.model.Deal
 import com.midtronics.project.brads_deal.data.repository.FeedRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import java.io.IOException
 
 class FeedViewModel(val feedRepository: FeedRepository): ViewModel() {
     val TAG = FeedViewModel::class.java.canonicalName
@@ -23,9 +24,13 @@ class FeedViewModel(val feedRepository: FeedRepository): ViewModel() {
         Log.d(TAG,"Preparing deals for view")
 
         viewModelScope.launch(Dispatchers.IO){
-            val deals = feedRepository.getDeals()
-            deals?.also {
-                _fetchedDeals.postValue(it)
+            try{
+                val deals = feedRepository.getDeals()
+                deals?.also {
+                    _fetchedDeals.postValue(it)
+                }
+            }catch(e: IOException){
+
             }
         }
     }

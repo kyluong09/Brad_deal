@@ -23,12 +23,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        initilizeNavController()
-
-    }
-
-    override fun onResume() {
-        super.onResume()
         // Check if user has internet. Otherwise ask user to turn on WIFI before using our app
         if(!isNetworkAvailable()){
             MaterialAlertDialogBuilder(this)
@@ -40,7 +34,10 @@ class MainActivity : AppCompatActivity() {
                 })
                 .show()
         }
+        initilizeNavController()
+
     }
+
 
     private fun initilizeNavController(){
         Log.d(TAG, "Initializing NavigationController")
