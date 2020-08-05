@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">brads_deal</string>
+    <string name="attention">Attention</string>
+    <string name="attention_message">Internet isn not available. Please turn on your Wi-Fi network before using the app</string>
+    <string name="okay">Okay</string>
+    <string name="done">Done</string>
+    <string name="menu_feed">Feed</string>
+</resources>
