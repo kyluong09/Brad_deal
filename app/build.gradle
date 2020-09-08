@@ -37,61 +37,66 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    dynamicFeatures = [':feed']
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.core:core-ktx:1.3.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    api 'androidx.appcompat:appcompat:1.1.0'
+    api 'androidx.core:core-ktx:1.3.0'
+    api 'androidx.constraintlayout:constraintlayout:1.1.3'
 
     // Navigation
-    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
-    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+    api "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    api "androidx.navigation:navigation-ui-ktx:$nav_version"
 
     // Room
-    implementation "androidx.room:room-runtime:$room_version"
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+    api "androidx.room:room-runtime:$room_version"
+    api 'androidx.legacy:legacy-support-v4:1.0.0'
+    api 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    api 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
     kapt "androidx.room:room-compiler:$room_version"
 
     // Retrofit
-    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    api "com.squareup.retrofit2:retrofit:$retrofit_version"
 
     // ViewModel
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    api "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
 
     // LiveData
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+    api "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
 
     // Coroutine
-    implementation "androidx.concurrent:concurrent-futures-ktx:$coroutine_version"
+    api "androidx.concurrent:concurrent-futures-ktx:$coroutine_version"
 
     // Glide
-    implementation "com.github.bumptech.glide:glide:$glide_version"
+    api "com.github.bumptech.glide:glide:$glide_version"
     kapt "com.github.bumptech.glide:compiler:$glide_version"
 
     // Material Design
-    implementation "com.google.android.material:material:$material_version"
+    api "com.google.android.material:material:$material_version"
 
     // Koin AndroidX Scope features
-    implementation "org.koin:koin-androidx-scope:$koin_version"
+    api "org.koin:koin-androidx-scope:$koin_version"
     // Koin AndroidX ViewModel features
-    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+    api "org.koin:koin-androidx-viewmodel:$koin_version"
     // Koin AndroidX Fragment features
-    implementation "org.koin:koin-androidx-fragment:$koin_version"
+    api "org.koin:koin-androidx-fragment:$koin_version"
     // Koin AndroidX Experimental features
-    implementation "org.koin:koin-androidx-ext:$koin_version"
+    api "org.koin:koin-androidx-ext:$koin_version"
 
     // Gson
-    implementation "com.google.code.gson:gson:$gson_version"
+    api "com.google.code.gson:gson:$gson_version"
 
-    implementation "com.squareup.retrofit2:converter-gson:$gson_converter_version"
+    api "com.squareup.retrofit2:converter-gson:$gson_converter_version"
 
     // Mockito
     testImplementation "org.mockito:mockito-core:$mockito_version"
+
+
+    // Dynamic Feature Module Navigation
+    api "androidx.navigation:navigation-dynamic-features-fragment:$navigation_dynamic_version"
 
 
     testImplementation 'junit:junit:4.12'

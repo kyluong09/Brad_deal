@@ -1,9 +1,9 @@
 package com.midtronics.project.brads_deal
 
-import com.midtronics.project.brads_deal.data.model.Deal
-import com.midtronics.project.brads_deal.data.model.SpecificDeal
-import com.midtronics.project.brads_deal.data.repository.FeedRepository
-import com.midtronics.project.brads_deal.ui.FeedViewModel
+import com.midtronics.project.feed.data.model.Deal
+import com.midtronics.project.feed.data.model.SpecificDeal
+import com.midtronics.project.feed.data.repository.FeedRepository
+import com.midtronics.project.feed.ui.FeedViewModel
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
 import org.junit.Test

@@ -2,12 +2,14 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav"
+    app:moduleName="feed"
     app:startDestination="@id/firstFragment">
 
-    <include-dynamic
+    <fragment
         android:id="@+id/firstFragment"
-        app:graphResName="nav_feed"
-        app:moduleName="feed"/>
+        android:name="com.midtronics.project.feed.ui.FeedFragment"
+        android:label="Feed"
+        app:moduleName="feed"
+        tools:layout="@layout/first_fragment"/>
 
 </navigation>

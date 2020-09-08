@@ -5,6 +5,7 @@ import android.net.ConnectivityManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -23,6 +24,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setSupportActionBar(tool_bar)
         // Check if user has internet. Otherwise ask user to turn on WIFI before using our app
         if(!isNetworkAvailable()){
             MaterialAlertDialogBuilder(this)
@@ -54,5 +56,10 @@ class MainActivity : AppCompatActivity() {
         val connectManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val networkInfo = connectManager.activeNetworkInfo
         return networkInfo != null && networkInfo.isConnected
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_toolbar,menu)
+        return true
     }
 }
